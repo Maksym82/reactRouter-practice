@@ -54,7 +54,7 @@
 */
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-// import HomePage from "./pages/HomePage";
+import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import LoginPage from "./pages/LoginPage";
 import NotFoundPage from "./pages/NotFoundPage";
@@ -67,14 +67,17 @@ import Layout from "./components/Layout";
 function App() {
   const router = createBrowserRouter([
     {
-      path: "/", element: <Layout />, children: [
+      path: "/",
+       element: <Layout />,
+       children: [
+        { index: true, element: <HomePage /> },
         { path: "about", element: <AboutPage /> },
         { path: "login", element: <LoginPage /> },
         { path: "*", element: <NotFoundPage /> },
         { path: "product/:productsID", element: <ProductDetails /> },
         { path: "products", element: <ProductsPage /> },
         { path: "search", element: <SearchPage /> }
-      ]
+      ],
     },
 
   ]);
