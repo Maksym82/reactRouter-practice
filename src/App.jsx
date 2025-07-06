@@ -71,7 +71,7 @@ function App() {
         { path: "about", element: <AboutPage /> },
         { path: "login", element: <LoginPage /> },
         { path: "*", element: <NotFoundPage /> },
-        { path: "product", element: <ProductDetails /> },
+        { path: "product/:productsID", element: <ProductDetails /> },
         { path: "products", element: <ProductsPage /> },
         { path: "search", element: <SearchPage /> }
       ]
