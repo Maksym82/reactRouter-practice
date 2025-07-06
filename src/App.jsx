@@ -53,7 +53,7 @@
 // 08. Set up a redirect from all non-existent pages to the main page.
 */
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import LoginPage from "./pages/LoginPage";
@@ -73,7 +73,8 @@ function App() {
         { index: true, element: <HomePage /> },
         { path: "about", element: <AboutPage /> },
         { path: "login", element: <LoginPage /> },
-        { path: "*", element: <NotFoundPage /> },
+        // { path: "*", element: <Navigate to={"/"}/> },
+        { path: "*", element: <NotFoundPage/> },
         { path: "product/:productsID", element: <ProductDetails /> },
         { path: "products", element: <ProductsPage /> },
         { path: "search", element: <SearchPage /> }
