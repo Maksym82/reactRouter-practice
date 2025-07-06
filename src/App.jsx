@@ -14,6 +14,8 @@
 // │   └── NotFoundPage.jsx      // Страница 404
 // ├── App.jsx                   // Корневой компонент с <Router> и маршрутизацией
 
+
+
 // 02. Создайте ссылки на страницы в компоненте Header и разместите его на всех страницах любым удобным способом.
 // 03. Настройте путь на страницу ProductDetails динамически. Отобразите на странице параметр из пути текущей страницы.
 // 04. Посмотрите задание по query string в компоненте searchPage.jsx.
@@ -51,8 +53,28 @@
 // 08. Set up a redirect from all non-existent pages to the main page.
 */
 
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import LoginPage from "./pages/LoginPage";
+import NotFoundPage from "./pages/NotFoundPage";
+import ProductDetails from "./pages/ProductDetails";
+import ProductsPage from "./pages/ProductsPage";
+import SearchPage from "./pages/SearchPage";
+
+
 function App() {
-  return <div></div>;
+  const router = createBrowserRouter([
+    { path: "/", element: <HomePage/>},
+    { path: "about", element: <AboutPage/>},
+    { path: "login", element: <LoginPage/>},
+    { path: "*", element: <NotFoundPage/>},
+    { path: "product", element: <ProductDetails/>},
+    { path: "products", element: <ProductsPage/>},
+    { path: "search", element: <SearchPage/>}
+  ]);
+
+  return <RouterProvider router={router} />;
 }
 
 export default App;
